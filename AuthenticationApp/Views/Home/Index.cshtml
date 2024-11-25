@@ -1,0 +1,48 @@
+﻿@using AuthenticationApp.Domain.Enums
+@using AuthenticationApp.ViewModels
+@using AuthenticationApp.Domain.Models
+@model HomeIndexViewModel
+
+<div class="pt-5">
+    <div class="toolbar d-flex justify-content-between align-items-center p-2 mb-2">
+        <div>
+            <button class="btn btn-outline-primary block-button">Block</button>
+            <button class="btn btn-outline-primary unblock-button"><i class="fa-solid fa-lock-open"></i></button>
+            <button class="btn btn-outline-danger delete-button"><i class="fa-solid fa-trash"></i></button>
+        </div>
+        <div>Hello, <b>@Model.FirstName</b>! | <a href="/logout">Logout</a></div>
+    </div>
+    <div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><input class="select-all-checkbox" type="checkbox" /></th>
+                        <th class="col-3">Email</th>
+                        <th class="col-3"><span class="d-none d-sm-inline">First</span> Name</th>
+                        <th class="col-3 d-none d-sm-table-cell">Last Name</th>
+                        <th class="col-3">Last Seen</th>
+                        <th class="col-3">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model.Users)
+                    {
+                        <tr @(user.Status == UserStatus.Blocked ? "class=blocked" : String.Empty)>
+                            <td><input class="row-checkbox" type="checkbox" value="@user.Email" /></td>
+                            <td class="td-email">@user.Email</td>
+                            <td class="td-firstname">@user.FirstName</td>
+                            <td class="td-lastname d-none d-sm-table-cell">@user.LastName</td>
+                            <td class="td-lastseen" title="@user.LastOnline UTC">@user.GetLastOnlineString()</td>
+                            <td class="td-status">@user.Status</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/homeindex.js"></script>
+}

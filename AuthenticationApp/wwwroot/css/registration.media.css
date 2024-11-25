@@ -1,0 +1,43 @@
+﻿@media(max-width: 991px) {
+	.registration-header {
+		font-size: 28px;
+	}
+}
+
+@media(max-height: 767px) {
+
+	.registration-section {
+		flex-grow: 1;
+	}
+
+	.registration-form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.background-section {
+		width: 300px;
+	}
+
+	.form-element {
+		width: 215px;
+	}
+
+	.submit-section {
+		flex-grow: 1;
+		flex-shrink: 0;
+		width: 100%;
+	}
+}
+
+@media(max-width: 991px) and (max-height: 767px) {
+
+	.background-section {
+		width: 200px;
+	}
+
+	.form-element {
+		width: 200px;
+	}
+}

@@ -1,0 +1,32 @@
+﻿@model string
+@{
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="row login-section-wrapper justify-content-center justify-content-sm-start row">
+            <div class="login-section col-8 col-sm-8 col-md-6 p-5 shadow">
+                <p>Please enter your details</p>
+                <h2 class="login-header mb-3">Sign In To The App</h2>
+                <p class="error-message text-danger mb-3">@Model</p>
+                <form class="login-form mb-5" asp-controller="authentication" asp-action="loginasync" method="post" data-redirect=@Url.Action("Index", "Home")>
+                    <p class="form-element mb-3">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control" id="email" type="email" name="email" required />
+                    </p>
+                    <p class="form-element mb-5">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control" id="password" type="password" name="password" required />
+                    </p>
+                    <p class="form-element d-flex">
+                        <button class="btn btn-primary flex-grow-1" type="submit">Submit</button>
+                    </p>
+                </form>
+                <p>Don't have an account? <a class="text-nowrap" href="/registration">Sign up</a></p>
+            </div>
+            <div class="background-section col-sm-4 col-md-6 d-none d-sm-block"></div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script src="/js/authlogin.js"></script>
+}
+

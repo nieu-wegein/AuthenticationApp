@@ -1,0 +1,62 @@
+html {
+	font-size: 14px;
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+	box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 60px;
+}
+
+a {
+	color: black;
+	font-weight: 600;
+
+}
+
+.login-section-wrapper,
+.registration-section-wrapper {
+	width: 866px;
+}
+
+.background-section {
+	background-image: url(../img/f169f98fd976bd5de16e34dbec1bb44e.jpg);
+	background-repeat: no-repeat;
+}
+
+.error-message:empty::before {
+	content: "";
+	display: inline-block;
+}
+
+.toolbar {
+	background-color: rgb(171, 231, 255, 0.1);
+}
+
+.blocked :not(:last-child) {
+	color: rgb(170, 170, 170);
+	text-decoration: line-through;
+}
+
+.blocked :last-child {
+	background-color: rgba(247, 134, 131, 0.30);
+}
+
+@media(max-width: 767px) {
+	.login-header {
+		font-size: 20px;
+	}
+}
